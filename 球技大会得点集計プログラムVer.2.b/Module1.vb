@@ -17,11 +17,23 @@ Public Class VolleyBall
     Public Property GetLoseRate As Integer = 0
 End Class
 
-Module MainModule
+Module Module1
+    Private VolleyBall As Dictionary(Of String, VolleyBall)
 
-    Private Sub Main()
+    Sub Main()
         Console.WriteLine("～球技大会得点集計プログラムVer.2～")
         ShiraAuxiliarySys.DisableCloseButton()
+
+        Console.WriteLine("処理種目別コードを入力し、Enterキーを押してください")
+        Console.WriteLine("バレーボール→1")
+        Console.WriteLine("バスケットボール→2")
+        Console.WriteLine("卓球→3")
+        Console.WriteLine("ドッチボール→4")
+        Console.WriteLine("現在の集計結果の表示→5")
+        Console.WriteLine("全データの初期化→6")
+        Console.WriteLine("プログラムの終了→7")
+        Dim strInPutKey As String = Console.ReadLine()
+        Dim intInPutKey As Integer = ShiraAuxiliarySys.StrIntConv(strInPutKey)
     End Sub
 
 End Module
